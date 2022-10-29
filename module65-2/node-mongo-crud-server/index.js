@@ -26,6 +26,7 @@ async function run() {
     const userCollection = client.db("nodeMongoCrud").collection("users");
     const user = { name: "new user", email: "newuser@gmail.com" };
     const result = await userCollection.insertOne(user);
+    console.log(result);
   } finally {
   }
 }
