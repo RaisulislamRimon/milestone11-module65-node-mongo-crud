@@ -20,11 +20,17 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true,
   serverApi: ServerApiVersion.v1,
 });
-client.connect((err) => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+
+async function run() {
+  try {
+    const userCollection = client.db("nodeMongoCrud").collection("users");
+    const user = { name: "new user", email: "newuser@gmail.com" };
+    const result = await userCollection.insertOne(user);
+  } finally {
+  }
+}
+
+run().catch((error) => console.log(error));
 
 // async await
 // async function run() {
