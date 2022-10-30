@@ -15,7 +15,13 @@ const AddUser = () => {
       body: JSON.stringify(user),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          alert("Data added to mongodb successfully");
+          e.target.reset();
+        }
+      });
   };
 
   const handleInputChange = (e) => {
