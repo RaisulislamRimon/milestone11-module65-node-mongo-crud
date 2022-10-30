@@ -23,18 +23,24 @@ const Home = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           if (data.deletedCount > 0) {
             alert(`user deleted successfully`);
+            const remaining = displayUsers.filter(
+              (usr) => usr._id !== user._id
+            );
+            setDisplayUsers(remaining);
           }
         });
     }
   };
   return (
     <div>
-      <h2>Users : {users.length} </h2>
+      {/* <h2>Users : {users.length} </h2> */}
+      <h2>Users : {displayUsers.length} </h2>
       <div>
-        {users.map((user) => (
+        {/* {users.map((user) => ( */}
+        {displayUsers.map((user) => (
           <p key={user._id}>
             {user.name} {user.email}{" "}
             {/* <button onClick={() => handleDelete(user._id)}>X</button> */}
