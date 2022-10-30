@@ -15,7 +15,12 @@ const Home = () => {
     // console.log(`deleting user with _id`, user._id);
     // console.log(`deleting user with _id ${user._id}`);
     if (agree) {
-      console.log(`deleting user with _id ${user._id}`);
+      // console.log(`deleting user with _id ${user._id}`);
+      fetch(`http://localhost:5000/users/${user._id}`, {
+        method: "DELETE",
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data));
     }
   };
   return (
