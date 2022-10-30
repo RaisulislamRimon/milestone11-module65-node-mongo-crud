@@ -32,6 +32,13 @@ async function run() {
       res.send(users);
     });
 
+    app.get("/users/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: ObjectId(id) };
+      const result = await userCollection.findOne(query);
+      res.send(result);
+    });
+
     // const user = { name: "new user", email: "newuser@gmail.com" };
     // const result = await userCollection.insertOne(user);
     // console.log(result);
