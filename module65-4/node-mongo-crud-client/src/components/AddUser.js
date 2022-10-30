@@ -6,6 +6,16 @@ const AddUser = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(user);
+
+    fetch(`http://127.0.0.1:3000/users`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
   };
 
   const handleInputChange = (e) => {
