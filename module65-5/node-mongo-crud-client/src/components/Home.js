@@ -6,14 +6,17 @@ const Home = () => {
 
   // const handleDelete = (_id) => {
   const handleDelete = (user) => {
-    console.log(user);
+    // console.log(user);
     const agree = window.confirm(
       `Are you sure you want to delete  ? ${user.name}`
     );
-    console.log(agree);
+    // console.log(agree);
     // console.log(`deleting user with _id`, _id);
     // console.log(`deleting user with _id`, user._id);
-    console.log(`deleting user with _id ${user._id}`);
+    // console.log(`deleting user with _id ${user._id}`);
+    if (agree) {
+      console.log(`deleting user with _id ${user._id}`);
+    }
   };
   return (
     <div>
