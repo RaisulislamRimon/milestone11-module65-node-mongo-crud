@@ -1,16 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 
 const AddUser = () => {
+  const [user, setUser] = useState({});
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
+  const handleInputChange = (e) => {
+    // console.log(e.target);
+    const value = e.target.value;
+    const field = e.target.name;
+    console.log(value, field);
+  };
+
   return (
     <div>
       <h2>Please add a new user </h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="name" id="name" placeholder="name" />
+        <input
+          onChange={handleInputChange}
+          type="text"
+          name="name"
+          id="name"
+          placeholder="name"
+        />
         <br />
-        <input type="email" name="email" id="email" placeholder="email" />
+        <input
+          onChange={handleInputChange}
+          type="email"
+          name="email"
+          id="email"
+          placeholder="email"
+        />
         <br />
         <input type="submit" value="Add user" />
       </form>
