@@ -24,9 +24,13 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     const userCollection = client.db("nodeMongoCrud").collection("users");
-    const user = { name: "new user", email: "newuser@gmail.com" };
-    const result = await userCollection.insertOne(user);
-    console.log(result);
+    // const user = { name: "new user", email: "newuser@gmail.com" };
+    // const result = await userCollection.insertOne(user);
+    // console.log(result);
+    app.post("/users", (req, res) => {
+      const user = req.body;
+      console.log(user);
+    });
   } finally {
   }
 }
