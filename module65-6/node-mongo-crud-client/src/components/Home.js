@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
   const users = useLoaderData();
+
+  const [displayUsers, setDisplayUsers] = useState(users);
 
   // const handleDelete = (_id) => {
   const handleDelete = (user) => {
@@ -20,7 +22,12 @@ const Home = () => {
         method: "DELETE",
       })
         .then((response) => response.json())
-        .then((data) => console.log(data));
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert(`user deleted successfully`);
+          }
+        });
     }
   };
   return (

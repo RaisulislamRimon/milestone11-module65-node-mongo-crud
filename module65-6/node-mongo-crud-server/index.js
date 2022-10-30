@@ -46,7 +46,7 @@ async function run() {
       const id = req.params.id;
       // console.log(`Trying to delete ${id}`);
       const query = { _id: ObjectId(id) };
-      const result = userCollection.deleteOne(query);
+      const result = await userCollection.deleteOne(query);
       // console.log(result);
       res.send(result);
     });
