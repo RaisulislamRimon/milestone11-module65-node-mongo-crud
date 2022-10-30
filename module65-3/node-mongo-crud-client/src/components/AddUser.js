@@ -4,6 +4,7 @@ const AddUser = () => {
   const [user, setUser] = useState({ name: "R", email: "r@gmail.com" });
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(user);
   };
 
   const handleInputChange = (e) => {
@@ -12,7 +13,9 @@ const AddUser = () => {
     const field = e.target.name;
     // console.log(value, field);
     const newUser = { ...user };
-    console.log(newUser);
+    newUser[field] = value;
+    setUser(newUser);
+    // console.log(newUser);
   };
 
   return (
