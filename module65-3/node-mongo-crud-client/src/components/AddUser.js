@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const AddUser = () => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({ name: "R", email: "r@gmail.com" });
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -10,7 +10,9 @@ const AddUser = () => {
     // console.log(e.target);
     const value = e.target.value;
     const field = e.target.name;
-    console.log(value, field);
+    // console.log(value, field);
+    const newUser = { ...user };
+    console.log(newUser);
   };
 
   return (
