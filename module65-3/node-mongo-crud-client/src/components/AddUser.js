@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 const AddUser = () => {
-  const [user, setUser] = useState({ name: "R", email: "r@gmail.com" });
+  // const [user, setUser] = useState({ name: "R", email: "r@gmail.com" });
+  const [user, setUser] = useState({});
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(user);
@@ -28,6 +29,14 @@ const AddUser = () => {
           name="name"
           id="name"
           placeholder="name"
+        />
+        <br />
+        <input
+          onChange={handleInputChange}
+          type="text"
+          name="address"
+          id="address"
+          placeholder="address"
         />
         <br />
         <input
