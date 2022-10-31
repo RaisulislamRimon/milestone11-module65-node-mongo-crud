@@ -26,10 +26,8 @@ const Update = () => {
   return (
     <div>
       <h2>Update</h2>
-      <h3>
-        name : {storedUser.name}
-        email: {storedUser.email}
-      </h3>
+      <h3>name : {storedUser.name}</h3>
+      <h4>email: {storedUser.email}</h4>
       <form onSubmit={handleUpdateUser}>
         <input
           onChange={handleInputChange}
