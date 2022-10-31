@@ -9,7 +9,15 @@ const Update = () => {
   const handleUpdateUser = (e) => {
     e.preventDefault();
     // console.log(user);
-    // fetch(`http://`)
+    fetch(`http://localhost:5000/users/${storedUser._id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
   };
 
   const handleInputChange = (e) => {

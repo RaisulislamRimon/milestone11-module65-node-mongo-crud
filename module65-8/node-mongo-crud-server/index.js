@@ -49,9 +49,11 @@ async function run() {
       res.send(result);
     });
 
-    app.put(`users/:id`, async (req, res) => {
+    app.put(`/users/:id`, async (req, res) => {
       const id = req.params.id;
       const filter = { _id: ObjectId(id) };
+      const updatedUser = req.body;
+      console.log(updatedUser);
     });
 
     app.delete("/users/:id", async (req, res) => {
