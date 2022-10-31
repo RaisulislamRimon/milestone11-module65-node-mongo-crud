@@ -4,7 +4,7 @@ const cors = require("cors");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 
 const app = express();
-const port = process.env.PORT || 7000;
+const port = process.env.PORT || 5000;
 
 // middlewares
 app.use(cors());
@@ -47,6 +47,11 @@ async function run() {
       console.log(user);
       const result = await userCollection.insertOne(user);
       res.send(result);
+    });
+
+    app.put(`users/:id`, async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: ObjectId(id) };
     });
 
     app.delete("/users/:id", async (req, res) => {

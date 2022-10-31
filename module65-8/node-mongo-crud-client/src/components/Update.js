@@ -5,9 +5,11 @@ const Update = () => {
   const storedUser = useLoaderData();
 
   const [user, setUser] = useState(storedUser);
+
   const handleUpdateUser = (e) => {
     e.preventDefault();
-    console.log(user);
+    // console.log(user);
+    // fetch(`http://`)
   };
 
   const handleInputChange = (e) => {
