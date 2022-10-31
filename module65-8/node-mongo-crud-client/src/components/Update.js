@@ -8,8 +8,8 @@ const Update = () => {
 
   const handleUpdateUser = (e) => {
     e.preventDefault();
-    // console.log(user);
-    fetch(`http://localhost:5000/users/${storedUser._id}`, {
+    console.log(user);
+    fetch(`http://localhost:5000/users/${user._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -17,7 +17,9 @@ const Update = () => {
       body: JSON.stringify(user),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+      });
   };
 
   const handleInputChange = (e) => {
