@@ -69,7 +69,7 @@ async function run() {
       );
       // console.log(user);
       // console.log((await result).acknowledged);
-      console.log(result);
+      // console.log(result);
       console.log(result.acknowledged);
       res.send(result);
     });

@@ -18,7 +18,12 @@ const Update = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
+        if (data.modifiedCount > 0) {
+          console.log(data);
+          alert(` user data updated`);
+          // e.target.reset();
+        }
       });
   };
 
